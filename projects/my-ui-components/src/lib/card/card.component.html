@@ -1,0 +1,8 @@
+<div class="card" [class.elevated]="elevated">
+  <img *ngIf="imageUrl" [src]="imageUrl" [alt]="title" class="card-image" />
+  <div class="card-body">
+    <h3 class="card-title" *ngIf="title">{{ title }}</h3>
+    <p class="card-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+    <ng-content></ng-content>
+  </div>
+</div>
