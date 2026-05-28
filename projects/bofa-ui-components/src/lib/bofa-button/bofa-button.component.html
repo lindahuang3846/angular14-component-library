@@ -1,0 +1,9 @@
+<button
+  [type]="type"
+  [disabled]="disabled"
+  [class]="'bofa-btn bofa-btn--' + variant + ' bofa-btn--' + size"
+  [class.bofa-btn--full-width]="fullWidth"
+  [class.bofa-btn--disabled]="disabled"
+  (click)="onClick($event)">
+  <ng-content></ng-content>
+</button>

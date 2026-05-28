@@ -1,0 +1,21 @@
+<div class="bofa-form-field"
+     [class.bofa-form-field--focused]="focused"
+     [class.bofa-form-field--error]="hasError"
+     [class.bofa-form-field--disabled]="disabled">
+  <label *ngIf="label" class="bofa-form-field__label">
+    {{ label }}
+    <span *ngIf="required" class="bofa-form-field__required">*</span>
+  </label>
+  <input
+    class="bofa-form-field__input"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    [required]="required"
+    (input)="onInput($event)"
+    (focus)="onFocus()"
+    (blur)="onBlur()" />
+  <span *ngIf="hint && !hasError" class="bofa-form-field__hint">{{ hint }}</span>
+  <span *ngIf="hasError" class="bofa-form-field__error">{{ errorMessage }}</span>
+</div>
