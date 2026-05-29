@@ -36,21 +36,20 @@
   color: #757575;
 }
 
-// Legacy Angular Material overrides for MatCard-like elevation.
-// These selectors target the pre-MDC internal DOM and will break in v15+.
-:host ::ng-deep .mat-card {
+// MDC-based Angular Material overrides for MatCard-like elevation (v15+).
+:host ::ng-deep .mat-mdc-card {
   border-radius: 8px;
   padding: 0;
 
-  .mat-card-header {
+  .mat-mdc-card-header {
     padding: 16px 16px 0;
   }
 
-  .mat-card-content {
+  .mat-mdc-card-content {
     padding: 0 16px 16px;
   }
 
-  .mat-card-actions {
+  .mat-mdc-card-actions {
     padding: 8px 16px;
     margin: 0;
   }

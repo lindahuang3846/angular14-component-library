@@ -1,60 +1,57 @@
-// SCSS overrides targeting legacy Angular Material form-field classes.
-// These selectors will break in the MDC migration (Angular Material 15+)
-// because the internal DOM structure changes from .mat-form-field-* to .mdc-text-field-*.
+// SCSS overrides targeting MDC-based Angular Material form-field classes (v15+).
 
 :host {
   display: block;
   width: 100%;
 
-  // Legacy form-field wrapper - replaced by MDC structure in v15+
-  ::ng-deep .mat-form-field-wrapper {
+  // MDC text field wrapper replaces legacy .mat-form-field-wrapper
+  ::ng-deep .mat-mdc-text-field-wrapper {
     padding-bottom: 1em;
   }
 
-  // Legacy form-field flex container
-  ::ng-deep .mat-form-field-flex {
+  // MDC form field flex
+  ::ng-deep .mat-mdc-form-field-flex {
     align-items: center;
     padding: 0 12px;
   }
 
-  // Legacy outline appearance specific overrides
-  ::ng-deep .mat-form-field-appearance-outline {
-    .mat-form-field-outline {
-      color: rgba(0, 0, 0, 0.2);
-    }
-
-    .mat-form-field-outline-thick {
-      color: #3f51b5;
-    }
-
-    // Legacy outline gap - completely removed in MDC
-    .mat-form-field-outline-gap {
-      border-top-color: transparent;
+  // MDC notched outline replaces legacy .mat-form-field-appearance-outline
+  ::ng-deep .mdc-notched-outline {
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__trailing {
+      border-color: rgba(0, 0, 0, 0.2);
     }
   }
 
-  // Legacy input element class - renamed in MDC
-  ::ng-deep .mat-input-element {
+  // Focused outline color
+  ::ng-deep .mdc-notched-outline--upgraded {
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__trailing {
+      border-color: #3f51b5;
+    }
+  }
+
+  // MDC input element replaces legacy .mat-input-element
+  ::ng-deep .mat-mdc-input-element {
     font-size: 14px;
     line-height: 1.5;
     caret-color: #3f51b5;
   }
 
-  // Legacy form-field label positioning
-  ::ng-deep .mat-form-field-label {
+  // MDC floating label replaces legacy .mat-form-field-label
+  ::ng-deep .mat-mdc-floating-label {
     color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
   }
 
-  // Legacy form-field infix - restructured in MDC
-  ::ng-deep .mat-form-field-infix {
-    border-top: 0.84375em solid transparent;
+  // MDC form field infix replaces legacy .mat-form-field-infix
+  ::ng-deep .mat-mdc-form-field-infix {
     padding: 0.5em 0;
   }
 
-  // Legacy prefix/suffix styling
-  ::ng-deep .mat-form-field-prefix,
-  ::ng-deep .mat-form-field-suffix {
+  // MDC prefix/suffix replaces legacy .mat-form-field-prefix/suffix
+  ::ng-deep .mat-mdc-form-field-icon-prefix,
+  ::ng-deep .mat-mdc-form-field-icon-suffix {
     .mat-icon {
       font-size: 20px;
       height: 20px;
