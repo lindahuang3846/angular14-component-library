@@ -1,6 +1,6 @@
-# Angular 14 Component Library
+# Angular 15 Component Library
 
-A reusable Angular 14 UI component library (`my-ui-components`) providing ready-to-use components.
+A reusable Angular 15 UI component library (`my-ui-components`) providing ready-to-use components.
 
 ## Components
 
@@ -29,8 +29,8 @@ A flexible card component with optional image, title, subtitle, and content proj
 
 ### Prerequisites
 
-- Node.js 16.x
-- Angular CLI 14
+- Node.js 16.13+ or 18.10+
+- Angular CLI 15
 
 ### Install dependencies
 
