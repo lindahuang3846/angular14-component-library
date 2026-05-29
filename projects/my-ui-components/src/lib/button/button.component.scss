@@ -1,0 +1,38 @@
+// SCSS overrides targeting legacy Angular Material class names.
+// These selectors will break during the MDC migration (Angular Material 15+)
+// because the internal DOM structure and class names change from .mat-* to .mdc-*.
+
+:host {
+  display: inline-block;
+
+  // Legacy .mat-button-wrapper is removed in MDC-based MatButton
+  ::ng-deep .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  // Legacy ripple class targeting
+  ::ng-deep .mat-button-ripple {
+    border-radius: 4px;
+  }
+
+  // Legacy focus overlay - removed in MDC migration
+  ::ng-deep .mat-button-focus-overlay {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  // Targeting legacy raised button internal structure
+  ::ng-deep .mat-raised-button {
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 24px;
+    min-height: 40px;
+  }
+
+  // Legacy flat button overrides
+  ::ng-deep .mat-flat-button {
+    border-radius: 8px;
+  }
+}
