@@ -1,0 +1,64 @@
+// SCSS overrides targeting legacy Angular Material form-field classes.
+// These selectors will break in the MDC migration (Angular Material 15+)
+// because the internal DOM structure changes from .mat-form-field-* to .mdc-text-field-*.
+
+:host {
+  display: block;
+  width: 100%;
+
+  // Legacy form-field wrapper - replaced by MDC structure in v15+
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 1em;
+  }
+
+  // Legacy form-field flex container
+  ::ng-deep .mat-form-field-flex {
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  // Legacy outline appearance specific overrides
+  ::ng-deep .mat-form-field-appearance-outline {
+    .mat-form-field-outline {
+      color: rgba(0, 0, 0, 0.2);
+    }
+
+    .mat-form-field-outline-thick {
+      color: #3f51b5;
+    }
+
+    // Legacy outline gap - completely removed in MDC
+    .mat-form-field-outline-gap {
+      border-top-color: transparent;
+    }
+  }
+
+  // Legacy input element class - renamed in MDC
+  ::ng-deep .mat-input-element {
+    font-size: 14px;
+    line-height: 1.5;
+    caret-color: #3f51b5;
+  }
+
+  // Legacy form-field label positioning
+  ::ng-deep .mat-form-field-label {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+  }
+
+  // Legacy form-field infix - restructured in MDC
+  ::ng-deep .mat-form-field-infix {
+    border-top: 0.84375em solid transparent;
+    padding: 0.5em 0;
+  }
+
+  // Legacy prefix/suffix styling
+  ::ng-deep .mat-form-field-prefix,
+  ::ng-deep .mat-form-field-suffix {
+    .mat-icon {
+      font-size: 20px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
